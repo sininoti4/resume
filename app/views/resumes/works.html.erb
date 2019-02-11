@@ -1,0 +1,87 @@
+      <div>
+        <img src="/assets/works.jpg" width="100%">
+      </div>
+
+<style type="text/css">
+<!--
+.image {background-color: #fff;}
+
+.image img:hover {
+          opacity:0.8;
+          position:relative;
+          bottom:1px;
+          left:1px;
+          box-shadow: -2px 2px 8px gray;
+}
+-->
+</style>
+
+<div class="row">
+<div class="col-1"></div>
+<div class="col-10">
+
+<h1 class="text-center pb-5 pb-5 pt-5 mt-3">W O E K S</h1>
+
+
+<table class="table">
+          
+          <tr><td class="pt-5">
+          <a href="http://sininoti4.html.xdomain.jp/" class="image" target="_blank">
+          <img src="/assets/html.png" class="border" width="100%" hight="auto">
+          </a>
+          <p class="font-weight-bold pb-3 pt-5">
+          javascript , HTML　
+          <a href="https://github.com/sininoti4/ind" target="_blank"><img src="/assets/github.png" height="14px"></a>
+          </p>
+          <p class="pb-5">
+          １.  html,css のアプトプット<br>
+          ２.  サーバーを契約し、実際に公開<br>
+          ３.  jQueryの導入<br>
+          ４.  TOPへ移動,スライドショー
+          
+          </p>
+          </td></tr>
+          
+          <tr><td class="pt-5">
+          <a href="https://mysterious-depths-19237.herokuapp.com/" class="image" target="_blank">
+          <img src="/assets/ruby.png" class="border" width="100%" hight="auto">
+          </a>
+          <p class="font-weight-bold pb-3 pt-5">
+          ruby on rails 基礎機能（CRUD）
+          <a href="https://github.com/sininoti4/rby" target="_blank"><img src="/assets/github.png" height="14px"></a>
+          </p>
+          <p class="pb-5">
+          １.  詳細、新規作成、編集、削除<br>
+          ２.  bootstrap　導入<br>
+          ３.  githubでの共有<br>
+          ４.  コメント機能の追加、削除、編集
+
+          </p>
+          </td></tr>
+          
+          <% @resumes.each do |resume| %>
+            <tr><td class="pt-5">
+              <p><%= image_tag resume.image.url %></p>
+              <p class="font-weight-bold pb-3 pt-5">
+                <%= resume.title %>
+              </p>
+              <p class="pb-5">
+                <%= resume.content %>
+                  <a href="<%= resume.Github %>" target="_blank"><img src="/assets/github.png" height="14px"></a>
+              </p>
+              <%= link_to 'Delete', resume_path(resume), method: :delete, data:{ confirm: 'DELETE？' } %>
+            </td></tr>
+          <% end %>
+          
+          
+          <tr class="pt-5 pb-5 text-right"><td>
+            <%= link_to 'NEW', resumes_new_path %>
+          </tr></td>
+
+</table>
+
+
+
+</div>
+<div class="col-1"></div>
+</div>

@@ -1,0 +1,2 @@
+class AddImageToResume < ApplicationRecord
+end

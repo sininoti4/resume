@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReSUME</title>
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="pt-5 mt-3 mb-5">
+      <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="pt-3 mt-5 row">
+          <h1 class="col">
+            <a href="/resumes/index">
+            <img class="pl-2"src="/assets/logo.png" alt="ロゴ"　width="100%" height="70">
+            </a>
+          </h1>
+          <ul class="col text-right">
+            <a href="https://github.com/sininoti4" target="_blank">
+              <img src="/assets/github.png" alt="github" width="25" height="25" class="mt-4 mr-2">
+            </a>
+            <a href="https://qiita.com/sininoti4" target="_blank">
+              <img src="/assets/Qiita.png" alt="qiita" width="25" height="25" class="mt-4 mr-2">
+            </a>
+            <a href="https://twitter.com/sininoti4" target="_blank">
+              <img src="/assets/twitter.png" alt="twitter" width="25" height="25" class="mt-4 mr-3">
+            </a>
+          </ul>
+        </div>
+        
+        <nav class="navbar navbar-light pt-5 mt-5 pb-4" style="background-color:#fff;">
+          <div class="mr-auto"></div>
+          <a href="/resumes/about" class="navbar-brand mr-5 pr-2 text-monospace" style="font-size:17px;">About</a>
+          <a href="/resumes/works" class="navbar-brand mr-5 pr-2 text-monospace" style="font-size:17px;">Works</a>     
+          <a href="/resumes/history" class="navbar-brand mr-3 text-monospace" style="font-size:17px;">Resume</a>
+        </nav>
+      </div>
+      <div class="col-md-1"></div>
+      </div>
+      
+
+      
+    </header>
+    
+
+    <%= yield %>
+  </body>
+</html>
