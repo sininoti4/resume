@@ -21,9 +21,10 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
     if @resume.save
-      redirect_to resumes_works_path
+      redirect_to resumes_works_path, notice: 'Success!'
     else
       render :new
+      flash[:alert] = 'Save error!'
     end
   end
     
@@ -31,8 +32,7 @@ class ResumesController < ApplicationController
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to resumes_works_path
-  
+    redirect_to resumes_works_path, notice: 'Success!'
   end
     
     

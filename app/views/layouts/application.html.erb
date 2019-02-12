@@ -8,9 +8,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    
+    <style type="text/css">
+        a:link   {color:#084B8A;} 
+        a:visited{color:#084B8A;} 
+        a:hover  {color:#999999;} 
+    </style>
+    
   </head>
 
   <body>
+    
+    
+    
+    <% if flash[:notice] %>
+        <div class="alert alert-info text-center rounded-0 alert-dismissible fade show">
+            <p class="text-dark mb-0"><%= flash[:notice] %></p>
+            <button class="close" data-dismiss="alert">&times;</button>
+        </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+        <div class="alert alert-danger text-center rounded-0 alert-dismissible fade show">
+            <p class="text-dark mb-0"><%= flash[:alert] %></p>
+            <button class="close" data-dismiss="alert">&times;</button>
+        </div>
+    <% end %>
+    
+    
     <header class="pt-5 mt-3 mb-5">
       <div class="row">
       <div class="col-md-1"></div>
@@ -44,11 +70,40 @@
       <div class="col-md-1"></div>
       </div>
       
-
-      
     </header>
     
 
     <%= yield %>
+    
+      <header class="pt-5 mt-3 mb-5">
+      <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        
+        <nav class="navbar navbar-light pt-5 mt-5 pb-4" style="background-color:#fff;">
+          <div class="mr-auto"></div>
+          <a href="/resumes/about" class="navbar-brand mr-5 pr-2 text-monospace" style="font-size:17px;">About</a>
+          <a href="/resumes/works" class="navbar-brand mr-5 pr-2 text-monospace" style="font-size:17px;">Works</a>     
+          <a href="/resumes/history" class="navbar-brand mr-3 text-monospace" style="font-size:17px;">Resume</a>
+        </nav>
+        <div class="pt-3 mt-5 row">
+
+          <ul class="col text-right pr-5">
+            <a href="https://github.com/sininoti4" target="_blank">
+              <img src="/assets/github.png" alt="github" width="25" height="25" class="mt-4 mr-2">
+            </a>
+            <a href="https://qiita.com/sininoti4" target="_blank">
+              <img src="/assets/Qiita.png" alt="qiita" width="25" height="25" class="mt-4 mr-2">
+            </a>
+            <a href="https://twitter.com/sininoti4" target="_blank">
+              <img src="/assets/twitter.png" alt="twitter" width="25" height="25" class="mt-4 mr-3">
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      </div>
+      
+    </header>
   </body>
 </html>

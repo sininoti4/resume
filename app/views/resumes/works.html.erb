@@ -12,7 +12,8 @@
           bottom:1px;
           left:1px;
           box-shadow: -2px 2px 8px gray;
-}
+          
+
 -->
 </style>
 
@@ -59,28 +60,39 @@
           </p>
           </td></tr>
           
+
           <% @resumes.each do |resume| %>
             <tr><td class="pt-5">
-              <p><%= image_tag resume.image.url %></p>
-              <p class="font-weight-bold pb-3 pt-5">
+              <a href="https://mysterious-depths-19237.herokuapp.com/" class="image" target="_blank">
+                <%= image_tag resume.image.url, :width =>'100%' %>
+              </a>
+              
+              <p class="font-weight-bold pt-3">
                 <%= resume.title %>
+                <a href="<%= resume.Github %>" target="_blank"><img src="/assets/github.png" height="14px"></a>
               </p>
-              <p class="pb-5">
-                <%= resume.content %>
-                  <a href="<%= resume.Github %>" target="_blank"><img src="/assets/github.png" height="14px"></a>
+              <p class="pt-3">
+                <%= simple_format(resume.content) %>
               </p>
+              <p class="pt-3">
               <%= link_to 'Delete', resume_path(resume), method: :delete, data:{ confirm: 'DELETE？' } %>
+              </p>
+              
             </td></tr>
           <% end %>
           
           
-          <tr class="pt-5 pb-5 text-right"><td>
-            <%= link_to 'NEW', resumes_new_path %>
-          </tr></td>
+          <tr><td></td></tr>
+          
 
 </table>
 
-
+          <div class="pt-5 mt-5 row">
+            <div class="col-10"></div>
+            <a href="/resumes/new" class="col-2 pl-5 ">
+            <img class="pl-2"src="/assets/new.jpg" width="70">
+            </a>
+          </div>
 
 </div>
 <div class="col-1"></div>
