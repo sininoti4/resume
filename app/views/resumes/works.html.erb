@@ -44,7 +44,7 @@
           </td></tr>
           
           <tr><td class="pt-5">
-          <a href="https://mysterious-depths-19237.herokuapp.com/" class="image" target="_blank">
+          <a href="https://protected-forest-18182.herokuapp.com/" class="image" target="_blank">
           <img src="/assets/ruby.png" class="border" width="100%" hight="auto">
           </a>
           <p class="font-weight-bold pb-3 pt-5">
@@ -63,7 +63,7 @@
 
           <% @resumes.each do |resume| %>
             <tr><td class="pt-5">
-              <a href="https://mysterious-depths-19237.herokuapp.com/" class="image" target="_blank">
+              <a href="<%= resume.url %>" class="image" target="_blank">
                 <%= image_tag resume.image.url, :width =>'100%' %>
               </a>
               
@@ -74,7 +74,7 @@
               <p class="pt-3">
                 <%= simple_format(resume.content) %>
               </p>
-              <p class="pt-3">
+              <p class="pt-5 pr-5 text-right ">
               <%= link_to 'Delete', resume_path(resume), method: :delete, data:{ confirm: 'DELETE？' } %>
               </p>
               
@@ -90,7 +90,7 @@
           <div class="pt-5 mt-5 row">
             <div class="col-10"></div>
             <a href="/resumes/new" class="col-2 pl-5 ">
-            <img class="pl-2"src="/assets/new.jpg" width="70">
+            <img class="pl-2"src="/assets/new.jpg" width="50">
             </a>
           </div>
 

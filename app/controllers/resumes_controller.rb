@@ -40,7 +40,7 @@ class ResumesController < ApplicationController
 
 
   def resume_params
-    params.require(:resume).permit(:title, :content, :Github, :image)
+    params.require(:resume).permit(:title, :content, :Github, :image, :url)
   end
   
   
